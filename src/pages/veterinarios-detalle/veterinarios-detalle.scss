@@ -1,0 +1,24 @@
+page-veterinarios-detalle {
+.sebm-google-map-container {
+  height: 200px;
+  width:100%;
+  display: block;
+  margin-left: auto;
+    margin-right: auto;
+}
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  h2,h1 {
+   text-align: left;
+   padding-left: 2%;
+  }
+
+  ion-content {
+  background-image: url(../assets/img/fondo.jpg);
+  }
+
+}

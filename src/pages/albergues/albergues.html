@@ -1,0 +1,39 @@
+<!--
+  Generated template for the Albergues page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Albergues</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<ion-card>
+<sebm-google-map [latitude]="lat" [longitude]="lng">
+
+        <sebm-google-map-marker *ngFor="let location of coordenadas" [latitude]="location.Lat" [longitude]="location.Lon"></sebm-google-map-marker>
+
+</sebm-google-map>
+</ion-card>
+
+<ion-list>
+  <ion-item *ngFor="let albergue of alberguesList let i = index" (click)="clicked(i,albergue)">
+    <ion-thumbnail item-left>
+      <img src="http://entornodepre.com/abandonocero/web/uploads/petshelters/{{albergue.Photo}}">
+    </ion-thumbnail>
+    <h2>{{ albergue.Name }}</h2>
+
+    <button ion-button clear item-right>Ver</button>
+  </ion-item>
+</ion-list>
+</ion-content>

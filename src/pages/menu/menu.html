@@ -1,0 +1,82 @@
+
+<ion-header>
+  <ion-navbar>
+    <button (click)="CerrarSesion()">{{valor}}</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="row-center">
+      <ion-col col-center width-50>
+        <ion-card>
+          <ion-card-content>
+
+			<button (click)="openPageAdopta(p)">
+			 <div id="imagenes">
+			<img src="https://s3.amazonaws.com/ionic-io-static/bHYOgde7Rh2tLNxP692Z_adopta.png">
+			</div>
+			</button>
+
+			<div id="titulo" style="text-align: center;">Adopta</div>
+
+		  </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-center width-50>
+        <ion-card>
+          <ion-card-content>
+		  <button (click)="openPageActividad(p)">
+		<img src="https://s3.amazonaws.com/ionic-io-static/VbgRF1bS62bdiytnItjQ_rss-simbolo.png">
+		  </button>
+		<div id="titulo" style="text-align: center;">Actividad</div>
+		 </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row-center">
+      <ion-col col-center width-50>
+        <ion-card>
+          <ion-card-content>
+		    <button (click)="openPageAlbergues(p)">
+			<img src="https://s3.amazonaws.com/ionic-io-static/Ed2GqRHJQI2VXRY4vYJu_caseta-del-perro.png">
+			</button>
+			<div id="titulo" style="text-align: center;">Albergues</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-center width-50>
+        <ion-card>
+          <ion-card-content>
+		  <button (click)="openPageVeterinarios(p)">
+			<img src="https://s3.amazonaws.com/ionic-io-static/QEXK4QJvQ3CV0j0GXJFy_hospital-veterinario.png">
+			 </button>
+			 <div id="titulo" style="text-align: center;">Veterinarios</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row-center">
+      <ion-col col-center width-50>
+        <ion-card>
+          <ion-card-content>
+		  <button (click)="openPageParques(p)">
+			<img src="https://s3.amazonaws.com/ionic-io-static/LtvOegLcQAmp6VW0Uq7O_parque.png">
+			</button>
+			<div id="titulo" style="text-align: center;">Parques</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-center width-50>
+        <ion-card>
+          <ion-card-content>
+		  <button (click)="openPagePreferencias(p)">
+			<img src="https://s3.amazonaws.com/ionic-io-static/7ECsr6rZTVmMakqys1X3_music-control-settings-button.png">
+			</button>
+			<div id="titulo" style="text-align: center;">Preferencias</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

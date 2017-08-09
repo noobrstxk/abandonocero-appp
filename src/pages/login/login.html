@@ -1,0 +1,77 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<form>
+  <ion-card>
+  <h1 style ="text-align: center;">Iniciar sesión</h1>
+    <br>
+  <ion-item>
+    <ion-label color="primary" floating >Email</ion-label>
+    <ion-input type="email" value="{{correo}}" #emailx></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating >Contraseña</ion-label>
+    <ion-input type="password" #passx></ion-input>
+  </ion-item>
+  <br>
+<div id="iniciar"><button ion-button type="submit" class="center" (click)="Iniciar(passx.value,emailx.value)">Iniciar Sesión</button></div>
+<div id="final"><button ion-button (click)="recover()">Recuperar contraseña</button></div>
+</ion-card>
+<br>
+</form>
+
+<ion-card>
+<h1 style ="text-align: center;">Registrarse</h1>
+  <br>
+  <form [formGroup]="myForm" (ngSubmit)="saveData()" novalidate>
+  <ion-list>
+    <ion-item>
+
+    <ion-label color="primary" floating>Email</ion-label>
+    <ion-input type="email" formControlName="email" #email></ion-input>
+  </ion-item>
+<ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+      <p  color="danger" *ngIf="myForm.get('email').hasError('required')">El email es obligatorio</p>
+      <p  color="danger" *ngIf="myForm.get('email').hasError('pattern')">Eso no es un email</p>
+    </ion-item>
+  <ion-item>
+    <ion-label color="primary"  floating>Contraseña</ion-label>
+    <ion-input type="password" formControlName="password" #pass></ion-input>
+  </ion-item>
+    <ion-item *ngIf="myForm.get('password').errors && myForm.get('password').dirty">
+      <p   color="danger"  *ngIf="myForm.get('password').hasError('required')">La contraseña es obligatoria</p>
+      <p  color="danger" *ngIf="myForm.get('password').hasError('pattern')">Esta contraseña no tiene la suficiente fuerza</p>
+    </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Edad</ion-label>
+    <ion-input type="number" pattern="^([0-9][0-9]?|)$" maxlength="2" formControlName="edad" #edad></ion-input>
+  </ion-item>
+   <ion-item *ngIf="myForm.get('edad').errors && myForm.get('edad').dirty">
+      <p color="danger" *ngIf="myForm.get('edad').hasError('required')">La edad es obligatorio</p>
+      <p  color="danger" *ngIf="myForm.get('edad').hasError('pattern')">La edad no puede ser mas de 100 años</p>
+    </ion-item>
+  <br>
+  <div id="caja">
+  <div id="izquierda"><button ion-button  type="submit" (click)="Insert(email.value,pass.value,edad.value)" [disabled]="!myForm.valid" class="center">Registrarse</button></div>
+  <div id="derecha"><button ion-button  type="reset"  class="center">Reiniciar</button></div>
+  </div>
+
+  </ion-list>
+
+</form>
+</ion-card>
+</ion-content>

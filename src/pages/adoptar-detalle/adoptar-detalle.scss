@@ -1,0 +1,16 @@
+page-adoptar-detalle {
+ion-card {
+    position: relative;
+    text-align: center;
+  }
+   h2,h1 {
+    text-align: left;
+    padding-left: 2%;
+}
+ion-content {
+background-image: url(../assets/img/fondo.jpg);
+}
+#caja {
+    width: 100%
+  }
+}

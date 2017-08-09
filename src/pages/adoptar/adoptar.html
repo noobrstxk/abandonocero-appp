@@ -1,0 +1,27 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+	     <ion-title>Adopta una mascota</ion-title>
+
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+<ion-list>
+  <ion-item *ngFor="let perro of perroList let i = index" (click)="clicked(i,perro)">
+    <ion-thumbnail item-left>
+      <img src="http://entornodepre.com/abandonocero/web/uploads/animals/{{perro.Photo}}">
+    </ion-thumbnail>
+    <h2>{{ perro.Name }}</h2>
+	<h4>{{perro.Description}}</h4>
+
+    <button ion-button clear item-right>Ver</button>
+  </ion-item>
+</ion-list>
+	<!-- div #dataContainer></div>*/-->
+</ion-content>

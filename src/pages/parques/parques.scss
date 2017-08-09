@@ -1,0 +1,16 @@
+page-parques {
+.sebm-google-map-container {
+  height: 200px;
+  width:100%;
+  display: block;
+  margin-left: auto;
+    margin-right: auto;
+}
+ion-card {
+    position: relative;
+    text-align: center;
+  }
+  ion-content {
+  background-image: url(../assets/img/fondo.jpg);
+  }
+}

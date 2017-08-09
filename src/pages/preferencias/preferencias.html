@@ -1,0 +1,66 @@
+<!--
+  Generated template for the Preferencias page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+   <ion-navbar>
+    <ion-title>Preferencias</ion-title>
+    <ion-buttons end>
+         <button ion-button icon-only (click)="ionViewDidLoad()"><ion-icon name="refresh">
+ 		</ion-icon></button>
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+      <br>
+  <h1>Datos de usuario</h1>
+  <ion-item>
+    <ion-label color="primary" floating >Contraseña</ion-label>
+    <ion-input type="password" value="{{usuariox.pass}}"  #pass></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label color="primary" floating >Email</ion-label>
+    <ion-input type="text" value="{{usuariox.email}}"  #email></ion-input>
+  </ion-item>
+  <br>
+</ion-card>
+  <ion-card>
+    <br>
+ <h1 (click)="addNote()">Razas de animales preferidas</h1>
+
+	<ion-list>
+        <ion-item *ngFor="let member of members">{{member.Raza}}</ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+  <ion-label (click)="onChange($event)">Distancia maxima busqueda en Kilometros</ion-label>
+   <ion-select [ngModel]="selectedDevice" (ionChange)="onChange($event)">
+    <ion-option *ngFor="let distancia of distancias" [value]="distancia.name">{{distancia.name}} </ion-option>
+  </ion-select>
+  </ion-item>
+  <h1>{{Userdistancia}}</h1>
+</ion-card>
+  <br>
+  <ion-card>
+  <ion-item>
+    <ion-label  (click)="onChange2($event)">Elige la edad de la mascota</ion-label>
+  <ion-select [ngModel]="selectedDevice" (ionChange)="onChange2($event)">
+    <ion-option *ngFor="let category of categories" [value]="category.name">{{category.name}}</ion-option>
+  </ion-select>
+</ion-item>
+<h1>{{edad}}</h1>
+<h2>por defecto se eligira cachorro</h2>
+  </ion-card>
+  <br>
+<button ion-button (click)="updatePreferencias(pass.value,email.value)">Actualizar</button>
+</ion-content>
